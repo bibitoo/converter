@@ -81,7 +81,15 @@ public class ExcelToHtml {
     private HtmlHelper helper;
 	  String resultImagePath = "result/images/data/";
 
-    Map<String,MyPictureData> myPictureDatas = new HashMap<String,MyPictureData>();
+    public String getResultImagePath() {
+		return resultImagePath;
+	}
+
+	public void setResultImagePath(String resultImagePath) {
+		this.resultImagePath = resultImagePath;
+	}
+
+	Map<String,MyPictureData> myPictureDatas = new HashMap<String,MyPictureData>();
 
     private static final String TABLE_CLASS = "\"table table-bordered excelDefaults\"";
     private static final String DEFAULTS_CLASS = "excelDefaults";
@@ -200,16 +208,19 @@ public class ExcelToHtml {
 
     	if(args == null || args.length<2){
     		args = new String[2];
-    		args[0] = "1.xls";
-    		args[1] = "1.html";
+    		args[0] = "2.xlsx";
+    		args[1] = "2.html";
     	}
     	//if use inputstream and string result,use this:
     	//StringBuffer stringOut = new StringBuffer();
     	//
     	// ExcelToHtml toHtml = create(new FileInputStream(args[0]), stringOut);
         ExcelToHtml toHtml = create(args[0], new PrintWriter(new FileWriter(args[1])));
-        toHtml.setCompleteHTML(false);
-        toHtml.setSheetBorderOut(false);
+        toHtml.setCompleteHTML(false);//if true,output the html\title and body tag
+        toHtml.setSheetBorderOut(false);//if false,do not output sheet boder ,top A,B,C...and left row number
+        toHtml.setStyleOut(false);//if false, do not output style 
+        String resultImagePath = "result/images/data/";
+        toHtml.setResultImagePath(resultImagePath);//image in sheet store path
         toHtml.printPage();
     }
 
