@@ -38,4 +38,16 @@
       <scope>test</scope>
     </dependency>
   </dependencies>
+   	<distributionManagement>
+		<repository>
+			<id>nexus-releases</id>
+			<name>Internal Releases</name>
+			<url>http://sunqiyang.net:8088/nexus/content/repositories/releases/</url>
+		</repository>
+		<snapshotRepository>
+			<id>nexus-snapshots</id>
+			<name>Internal SnapShots</name>
+			<url>http://sunqiyang.net:8088/nexus/content/repositories/snapshots/</url>
+		</snapshotRepository>
+	</distributionManagement>
 </project>

@@ -208,8 +208,8 @@ public class ExcelToHtml {
 
     	if(args == null || args.length<2){
     		args = new String[2];
-    		args[0] = "2.xlsx";
-    		args[1] = "2.html";
+    		args[0] = "hidden-3.xlsx";
+    		args[1] = "3.html";
     	}
     	//if use inputstream and string result,use this:
     	//StringBuffer stringOut = new StringBuffer();
@@ -218,7 +218,7 @@ public class ExcelToHtml {
         ExcelToHtml toHtml = create(args[0], new PrintWriter(new FileWriter(args[1])));
         toHtml.setCompleteHTML(false);//if true,output the html\title and body tag
         toHtml.setSheetBorderOut(false);//if false,do not output sheet boder ,top A,B,C...and left row number
-        toHtml.setStyleOut(false);//if false, do not output style 
+        toHtml.setStyleOut(true);//if false, do not output style 
         String resultImagePath = "result/images/data/";
         toHtml.setResultImagePath(resultImagePath);//image in sheet store path
         toHtml.printPage();
