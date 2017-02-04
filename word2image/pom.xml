@@ -33,19 +33,7 @@
     <artifactId>icepdf-core</artifactId>
     <version>4.1.1</version>
 </dependency>
-        <dependency> 
-      <groupId>javax.servlet</groupId>  
-      <artifactId>servlet-api</artifactId>  
-      <version>${servlet_version}</version>  
-      <scope>provided</scope> 
-    </dependency>
-    <dependency> 
-      <groupId>javax.servlet.jsp</groupId>  
-      <artifactId>jsp-api</artifactId>  
-      <version>${jsp_version}</version>  
-      <scope>provided</scope> 
-    </dependency>
-    
+
     <!-- https://mvnrepository.com/artifact/org.springframework/spring-webmvc -->
 <dependency>
     <groupId>org.springframework</groupId>
